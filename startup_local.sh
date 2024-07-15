@@ -2,7 +2,7 @@
 
 pyenv install 3.12
 pyenv local 3.12
-poetry env use python
+poetry env use python3.12
 poetry install --with dev
 poetry run pre-commit install
 poetry shell
