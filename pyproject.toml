@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "my_tmp"
+name = "Metropolis Monte Carlo"
 version = "0.1.0"
-description = "template"
+description = "Metropolis algorithm for Monte Carlo atom swap"
 authors = ["xoxo <xoxo@gmail.com>"]
 readme = "README.md"
 packages = [
@@ -10,6 +10,12 @@ packages = [
 
 [tool.poetry.dependencies]
 python = "^3.12"
+numba = "^0.60.0"
+tqdm = "^4.66.4"
+numpy = "^2.0.0"
+pandas = "^2.2.2"
+ase = "^3.23.0"
+lammps = "^2023.8.2.3.1"
 
 [tool.poetry.dev-dependencies]
 black = "^24.2.0"
@@ -26,7 +32,7 @@ disallow_any_explicit = true
 disallow_any_generics = true
 warn_unreachable = true
 warn_unused_ignores = true
-disallow_untyped_defs = true
+disallow_untyped_defs = false
 exclude = [".venv/"]
 
 [[tool.mypy.overrides]]
@@ -42,6 +48,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.ruff]
 target-version = "py312"
+line-length = 120
 
 [tool.ruff.lint]
 select = [
@@ -59,5 +66,5 @@ pydocstyle.convention = "google"
 
 [tool.isort]
 profile = "black"
-line_length = 80
+line_length = 120
 multi_line_output = 4
